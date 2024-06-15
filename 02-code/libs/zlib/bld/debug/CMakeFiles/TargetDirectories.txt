@@ -1,0 +1,13 @@
+C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/zlib.dir
+C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/zlibstatic.dir
+C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/example.dir
+C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/minigzip.dir
+C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/example64.dir
+C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/minigzip64.dir
+C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/test.dir
+C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/edit_cache.dir
+C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/rebuild_cache.dir
+C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/list_install_components.dir
+C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/install.dir
+C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/install/local.dir
+C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/install/strip.dir

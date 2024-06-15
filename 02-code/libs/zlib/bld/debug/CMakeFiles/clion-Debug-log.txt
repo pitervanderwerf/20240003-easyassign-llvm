@@ -1,0 +1,4 @@
+"C:\Program Files\JetBrains\CLion 2024.1.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.1.2/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Projects\100051-EasyAssign-LLVM\02-code\libs\zlib -B C:\Projects\100051-EasyAssign-LLVM\02-code\libs\zlib\bld\debug
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug

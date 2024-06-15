@@ -1,0 +1,334 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      The system is: Windows - 10.0.22631 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: C:/Program Files/llvm-mingw/bin/cc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is Clang, found in:
+        C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/3.28.1/CompilerIdC/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-srg15h"
+      binary: "C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-srg15h"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-srg15h'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.2/bin/ninja/win/x64/ninja.exe" -v cmTC_b9c36
+        [1/2] C:\\PROGRA~1\\LLVM-M~1\\bin\\cc.exe   -fansi-escape-codes -fcolor-diagnostics   -v -MD -MT CMakeFiles/cmTC_b9c36.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_b9c36.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles/cmTC_b9c36.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c"
+        clang version 18.1.6 (https://github.com/llvm/llvm-project.git 1118c2e05e67a36ed8ca250524525cdb66a55256)
+        Target: x86_64-w64-windows-gnu
+        Thread model: posix
+        InstalledDir: C:/PROGRA~1/LLVM-M~1/bin
+         (in-process)
+         "C:/Program Files/llvm-mingw/bin/clang-18.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-srg15h -v -fcoverage-compilation-dir=C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-srg15h -resource-dir "C:/Program Files/llvm-mingw/lib/clang/18" -dependency-file "CMakeFiles\\\\cmTC_b9c36.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_b9c36.dir/CMakeCCompilerABI.c.obj -sys-header-deps -internal-isystem "C:/Program Files/llvm-mingw/lib/clang/18/include" -internal-isystem C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/include -internal-isystem C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/usr/include -internal-isystem C:/PROGRA~1/LLVM-M~1/include -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -exception-model=seh -fcolor-diagnostics -fansi-escape-codes -faddrsig -o CMakeFiles/cmTC_b9c36.dir/CMakeCCompilerABI.c.obj -x c "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c"
+        clang -cc1 version 18.1.6 based upon LLVM 18.1.6 default target x86_64-w64-mingw32
+        ignoring nonexistent directory "C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/usr/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         C:/Program Files/llvm-mingw/lib/clang/18/include\x0d
+         C:/PROGRA~1/LLVM-M~1/include\x0d
+        End of search list.\x0d
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM-M~1\\bin\\cc.exe  -v CMakeFiles/cmTC_b9c36.dir/CMakeCCompilerABI.c.obj -o cmTC_b9c36.exe -Wl,--out-implib,libcmTC_b9c36.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+        clang version 18.1.6 (https://github.com/llvm/llvm-project.git 1118c2e05e67a36ed8ca250524525cdb66a55256)
+        Target: x86_64-w64-windows-gnu
+        Thread model: posix
+        InstalledDir: C:/PROGRA~1/LLVM-M~1/bin
+         "C:/PROGRA~1/LLVM-M~1/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_b9c36.exe C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib/crt2.o C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib/crtbegin.o -LC:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib -LC:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/mingw/lib -LC:/PROGRA~1/LLVM-M~1/lib "-LC:/Program Files/llvm-mingw/lib/clang/18/lib/windows" CMakeFiles/cmTC_b9c36.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_b9c36.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 "C:/Program Files/llvm-mingw/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a" -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 "C:/Program Files/llvm-mingw/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a" -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib/crtend.o\x0d
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [C:/Program Files/llvm-mingw/lib/clang/18/include]
+          add: [C:/PROGRA~1/LLVM-M~1/include]
+        end of search list found
+        collapse include dir [C:/Program Files/llvm-mingw/lib/clang/18/include] ==> [C:/Program Files/llvm-mingw/lib/clang/18/include]
+        collapse include dir [C:/PROGRA~1/LLVM-M~1/include] ==> [C:/Program Files/llvm-mingw/include]
+        implicit include dirs: [C:/Program Files/llvm-mingw/lib/clang/18/include;C:/Program Files/llvm-mingw/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld\\.lld\\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: 'C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-srg15h']
+        ignore line: []
+        ignore line: [Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.2/bin/ninja/win/x64/ninja.exe" -v cmTC_b9c36]
+        ignore line: [[1/2] C:\\PROGRA~1\\LLVM-M~1\\bin\\cc.exe   -fansi-escape-codes -fcolor-diagnostics   -v -MD -MT CMakeFiles/cmTC_b9c36.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_b9c36.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles/cmTC_b9c36.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c"]
+        ignore line: [clang version 18.1.6 (https://github.com/llvm/llvm-project.git 1118c2e05e67a36ed8ca250524525cdb66a55256)]
+        ignore line: [Target: x86_64-w64-windows-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: C:/PROGRA~1/LLVM-M~1/bin]
+        ignore line: [ (in-process)]
+        ignore line: [ "C:/Program Files/llvm-mingw/bin/clang-18.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-srg15h -v -fcoverage-compilation-dir=C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-srg15h -resource-dir "C:/Program Files/llvm-mingw/lib/clang/18" -dependency-file "CMakeFiles\\\\cmTC_b9c36.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_b9c36.dir/CMakeCCompilerABI.c.obj -sys-header-deps -internal-isystem "C:/Program Files/llvm-mingw/lib/clang/18/include" -internal-isystem C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/include -internal-isystem C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/usr/include -internal-isystem C:/PROGRA~1/LLVM-M~1/include -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -exception-model=seh -fcolor-diagnostics -fansi-escape-codes -faddrsig -o CMakeFiles/cmTC_b9c36.dir/CMakeCCompilerABI.c.obj -x c "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c"]
+        ignore line: [clang -cc1 version 18.1.6 based upon LLVM 18.1.6 default target x86_64-w64-mingw32]
+        ignore line: [ignoring nonexistent directory "C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/include"]
+        ignore line: [ignoring nonexistent directory "C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/usr/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ C:/Program Files/llvm-mingw/lib/clang/18/include\x0d]
+        ignore line: [ C:/PROGRA~1/LLVM-M~1/include\x0d]
+        ignore line: [End of search list.\x0d]
+        ignore line: [[2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM-M~1\\bin\\cc.exe  -v CMakeFiles/cmTC_b9c36.dir/CMakeCCompilerABI.c.obj -o cmTC_b9c36.exe -Wl --out-implib libcmTC_b9c36.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+        ignore line: [clang version 18.1.6 (https://github.com/llvm/llvm-project.git 1118c2e05e67a36ed8ca250524525cdb66a55256)]
+        ignore line: [Target: x86_64-w64-windows-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: C:/PROGRA~1/LLVM-M~1/bin]
+        link line: [ "C:/PROGRA~1/LLVM-M~1/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_b9c36.exe C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib/crt2.o C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib/crtbegin.o -LC:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib -LC:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/mingw/lib -LC:/PROGRA~1/LLVM-M~1/lib "-LC:/Program Files/llvm-mingw/lib/clang/18/lib/windows" CMakeFiles/cmTC_b9c36.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_b9c36.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 "C:/Program Files/llvm-mingw/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a" -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 "C:/Program Files/llvm-mingw/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a" -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib/crtend.o\x0d]
+          arg [C:/PROGRA~1/LLVM-M~1/bin/ld.lld] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
+          arg [-o] ==> ignore
+          arg [cmTC_b9c36.exe] ==> ignore
+          arg [C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib/crt2.o] ==> obj [C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib/crt2.o]
+          arg [C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib/crtbegin.o] ==> obj [C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib/crtbegin.o]
+          arg [-LC:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib] ==> dir [C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib]
+          arg [-LC:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/mingw/lib] ==> dir [C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/mingw/lib]
+          arg [-LC:/PROGRA~1/LLVM-M~1/lib] ==> dir [C:/PROGRA~1/LLVM-M~1/lib]
+          arg [-LC:/Program Files/llvm-mingw/lib/clang/18/lib/windows] ==> dir [C:/Program Files/llvm-mingw/lib/clang/18/lib/windows]
+          arg [CMakeFiles/cmTC_b9c36.dir/CMakeCCompilerABI.c.obj] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_b9c36.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [C:/Program Files/llvm-mingw/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a] ==> lib [C:/Program Files/llvm-mingw/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a]
+          arg [-lunwind] ==> lib [unwind]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [C:/Program Files/llvm-mingw/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a] ==> lib [C:/Program Files/llvm-mingw/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a]
+          arg [-lunwind] ==> lib [unwind]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib/crtend.o] ==> obj [C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib/crtend.o]
+        remove lib [C:/Program Files/llvm-mingw/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a]
+        remove lib [msvcrt]
+        remove lib [C:/Program Files/llvm-mingw/lib/clang/18/lib/windows/libclang_rt.builtins-x86_64.a]
+        remove lib [msvcrt]
+        collapse obj [C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib/crt2.o] ==> [C:/Program Files/llvm-mingw/x86_64-w64-mingw32/lib/crt2.o]
+        collapse obj [C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib/crtbegin.o] ==> [C:/Program Files/llvm-mingw/x86_64-w64-mingw32/lib/crtbegin.o]
+        collapse obj [C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib/crtend.o] ==> [C:/Program Files/llvm-mingw/x86_64-w64-mingw32/lib/crtend.o]
+        collapse library dir [C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/lib] ==> [C:/Program Files/llvm-mingw/x86_64-w64-mingw32/lib]
+        collapse library dir [C:/PROGRA~1/LLVM-M~1/x86_64-w64-mingw32/mingw/lib] ==> [C:/Program Files/llvm-mingw/x86_64-w64-mingw32/mingw/lib]
+        collapse library dir [C:/PROGRA~1/LLVM-M~1/lib] ==> [C:/Program Files/llvm-mingw/lib]
+        collapse library dir [C:/Program Files/llvm-mingw/lib/clang/18/lib/windows] ==> [C:/Program Files/llvm-mingw/lib/clang/18/lib/windows]
+        implicit libs: [mingw32;unwind;moldname;mingwex;advapi32;shell32;user32;kernel32;mingw32;unwind;moldname;mingwex;kernel32]
+        implicit objs: [C:/Program Files/llvm-mingw/x86_64-w64-mingw32/lib/crt2.o;C:/Program Files/llvm-mingw/x86_64-w64-mingw32/lib/crtbegin.o;C:/Program Files/llvm-mingw/x86_64-w64-mingw32/lib/crtend.o]
+        implicit dirs: [C:/Program Files/llvm-mingw/x86_64-w64-mingw32/lib;C:/Program Files/llvm-mingw/x86_64-w64-mingw32/mingw/lib;C:/Program Files/llvm-mingw/lib;C:/Program Files/llvm-mingw/lib/clang/18/lib/windows]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "CMakeLists.txt:22 (check_include_file)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-91optn"
+      binary: "C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-91optn"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-91optn'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.2/bin/ninja/win/x64/ninja.exe" -v cmTC_3c503
+        [1/2] C:\\PROGRA~1\\LLVM-M~1\\bin\\cc.exe   -fansi-escape-codes -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_3c503.dir/CheckIncludeFile.c.obj -MF CMakeFiles\\cmTC_3c503.dir\\CheckIncludeFile.c.obj.d -o CMakeFiles/cmTC_3c503.dir/CheckIncludeFile.c.obj -c C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-91optn/CheckIncludeFile.c
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM-M~1\\bin\\cc.exe   CMakeFiles/cmTC_3c503.dir/CheckIncludeFile.c.obj -o cmTC_3c503.exe -Wl,--out-implib,libcmTC_3c503.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "CMakeLists.txt:23 (check_include_file)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-9kxnsq"
+      binary: "C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-9kxnsq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-9kxnsq'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.2/bin/ninja/win/x64/ninja.exe" -v cmTC_b7000
+        [1/2] C:\\PROGRA~1\\LLVM-M~1\\bin\\cc.exe   -fansi-escape-codes -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_b7000.dir/CheckIncludeFile.c.obj -MF CMakeFiles\\cmTC_b7000.dir\\CheckIncludeFile.c.obj.d -o CMakeFiles/cmTC_b7000.dir/CheckIncludeFile.c.obj -c C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-9kxnsq/CheckIncludeFile.c
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM-M~1\\bin\\cc.exe   CMakeFiles/cmTC_b7000.dir/CheckIncludeFile.c.obj -o cmTC_b7000.exe -Wl,--out-implib,libcmTC_b7000.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "CMakeLists.txt:24 (check_include_file)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-oxzv1w"
+      binary: "C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-oxzv1w"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-oxzv1w'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.2/bin/ninja/win/x64/ninja.exe" -v cmTC_e3e52
+        [1/2] C:\\PROGRA~1\\LLVM-M~1\\bin\\cc.exe   -fansi-escape-codes -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_e3e52.dir/CheckIncludeFile.c.obj -MF CMakeFiles\\cmTC_e3e52.dir\\CheckIncludeFile.c.obj.d -o CMakeFiles/cmTC_e3e52.dir/CheckIncludeFile.c.obj -c C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-oxzv1w/CheckIncludeFile.c
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM-M~1\\bin\\cc.exe   CMakeFiles/cmTC_e3e52.dir/CheckIncludeFile.c.obj -o cmTC_e3e52.exe -Wl,--out-implib,libcmTC_e3e52.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CheckTypeSize.cmake:146 (try_compile)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CheckTypeSize.cmake:271 (__check_type_size_impl)"
+      - "CMakeLists.txt:42 (check_type_size)"
+    checks:
+      - "Check size of off64_t"
+    directories:
+      source: "C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-mw1kx3"
+      binary: "C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-mw1kx3"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAVE_OFF64_T"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-mw1kx3'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.2/bin/ninja/win/x64/ninja.exe" -v cmTC_394b8
+        [1/2] C:\\PROGRA~1\\LLVM-M~1\\bin\\cc.exe -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_TYPES_H -D_LARGEFILE64_SOURCE=1  -fansi-escape-codes -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_394b8.dir/OFF64_T.c.obj -MF CMakeFiles\\cmTC_394b8.dir\\OFF64_T.c.obj.d -o CMakeFiles/cmTC_394b8.dir/OFF64_T.c.obj -c C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-mw1kx3/OFF64_T.c
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM-M~1\\bin\\cc.exe   CMakeFiles/cmTC_394b8.dir/OFF64_T.c.obj -o cmTC_394b8.exe -Wl,--out-implib,libcmTC_394b8.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "CMakeLists.txt:51 (check_function_exists)"
+    checks:
+      - "Looking for fseeko"
+    directories:
+      source: "C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-q7b0bf"
+      binary: "C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-q7b0bf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAVE_FSEEKO"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-q7b0bf'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.2/bin/ninja/win/x64/ninja.exe" -v cmTC_9e19c
+        [1/2] C:\\PROGRA~1\\LLVM-M~1\\bin\\cc.exe   -DCHECK_FUNCTION_EXISTS=fseeko -fansi-escape-codes -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_9e19c.dir/CheckFunctionExists.c.obj -MF CMakeFiles\\cmTC_9e19c.dir\\CheckFunctionExists.c.obj.d -o CMakeFiles/cmTC_9e19c.dir/CheckFunctionExists.c.obj -c C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-q7b0bf/CheckFunctionExists.c
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM-M~1\\bin\\cc.exe -DCHECK_FUNCTION_EXISTS=fseeko  CMakeFiles/cmTC_9e19c.dir/CheckFunctionExists.c.obj -o cmTC_9e19c.exe -Wl,--out-implib,libcmTC_9e19c.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.2/bin/cmake/win/x64/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "CMakeLists.txt:59 (check_include_file)"
+    checks:
+      - "Looking for unistd.h"
+    directories:
+      source: "C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-kss9a8"
+      binary: "C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-kss9a8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "Z_HAVE_UNISTD_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-kss9a8'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.2/bin/ninja/win/x64/ninja.exe" -v cmTC_6c5dc
+        [1/2] C:\\PROGRA~1\\LLVM-M~1\\bin\\cc.exe   -fansi-escape-codes -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_6c5dc.dir/CheckIncludeFile.c.obj -MF CMakeFiles\\cmTC_6c5dc.dir\\CheckIncludeFile.c.obj.d -o CMakeFiles/cmTC_6c5dc.dir/CheckIncludeFile.c.obj -c C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/debug/CMakeFiles/CMakeScratch/TryCompile-kss9a8/CheckIncludeFile.c
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\PROGRA~1\\LLVM-M~1\\bin\\cc.exe   CMakeFiles/cmTC_6c5dc.dir/CheckIncludeFile.c.obj -o cmTC_6c5dc.exe -Wl,--out-implib,libcmTC_6c5dc.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
+...

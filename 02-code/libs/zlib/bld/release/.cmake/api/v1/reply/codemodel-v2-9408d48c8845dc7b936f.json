@@ -1,0 +1,106 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-68560abef0fa664caf2f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.4.4"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "zlib",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "example::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-example-Release-dee48aa18268a1799ce7.json",
+					"name" : "example",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "example64::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-example64-Release-e1e1cbaa9d6d6c751284.json",
+					"name" : "example64",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "minigzip::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-minigzip-Release-738a4bce5e6a14ae7692.json",
+					"name" : "minigzip",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "minigzip64::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-minigzip64-Release-76a94525175bae26aa5a.json",
+					"name" : "minigzip64",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "zlib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-zlib-Release-ed5fdaca4b5f2525f66c.json",
+					"name" : "zlib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "zlibstatic::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-zlibstatic-Release-57ed67cf1af046831e8d.json",
+					"name" : "zlibstatic",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib/bld/release",
+		"source" : "C:/Projects/100051-EasyAssign-LLVM/02-code/libs/zlib"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

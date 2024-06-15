@@ -1,0 +1,70 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "Clang",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"C:/Program Files/llvm-mingw/lib/clang/18/include",
+						"C:/Program Files/llvm-mingw/include"
+					],
+					"linkDirectories" : 
+					[
+						"C:/Program Files/llvm-mingw/x86_64-w64-mingw32/lib",
+						"C:/Program Files/llvm-mingw/x86_64-w64-mingw32/mingw/lib",
+						"C:/Program Files/llvm-mingw/lib",
+						"C:/Program Files/llvm-mingw/lib/clang/18/lib/windows"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"mingw32",
+						"unwind",
+						"moldname",
+						"mingwex",
+						"advapi32",
+						"shell32",
+						"user32",
+						"kernel32",
+						"mingw32",
+						"unwind",
+						"moldname",
+						"mingwex",
+						"kernel32"
+					]
+				},
+				"path" : "C:/Program Files/llvm-mingw/bin/cc.exe",
+				"version" : "18.1.6"
+			},
+			"language" : "C",
+			"sourceFileExtensions" : 
+			[
+				"c",
+				"m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"implicit" : {},
+				"path" : "C:/Program Files/llvm-mingw/bin/windres.exe"
+			},
+			"language" : "RC",
+			"sourceFileExtensions" : 
+			[
+				"rc",
+				"RC"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

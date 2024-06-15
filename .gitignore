@@ -1,4 +1,6 @@
-00-client/
-02-input/
-04-output/
-05-tools/
+/02-code/.idea
+/02-code/bin
+/02-code/bld
+/02-code/src/libs/boost
+/03-resources
+/04-test

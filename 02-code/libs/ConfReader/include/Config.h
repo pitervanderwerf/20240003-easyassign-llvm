@@ -16,6 +16,7 @@ namespace Config {
 	// Model settings
 	extern const int NUMBER_OF_CENTROIDS;
 	extern const double INSIGNIFICANT_OD_PAIRS_THRESHOLD;
+    extern const double SIGNIFICANT_SOURCE_PRODUCTION;
 	extern const double VALUE_OF_TIME;
 
 	// Assignment settings

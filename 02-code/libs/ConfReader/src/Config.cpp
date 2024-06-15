@@ -33,6 +33,7 @@ const int Config::MAX_THREADS = system_settings["MAX_THREADS"].asInt();
 // SET MODEL SETTINGS
 const int Config::NUMBER_OF_CENTROIDS = model_settings["NUMBER_OF_CENTROIDS"].asInt();
 const double Config::INSIGNIFICANT_OD_PAIRS_THRESHOLD = model_settings["INSIGNIFICANT_OD_PAIRS_THRESHOLD"].asDouble();
+const double Config::SIGNIFICANT_SOURCE_PRODUCTION = model_settings["SIGNIFICANT_SOURCE_PRODUCTION"].asDouble();
 const double Config::VALUE_OF_TIME = model_settings["VALUE_OF_TIME"].asDouble();
 
 // SET ASSIGNMENT SETTINGS
@@ -76,6 +77,7 @@ void Config::printConfigValues() {
     Logger::log("\n\t// Model settings");
     Logger::log(alignLeft("\tNUMBER_OF_CENTROIDS:", columnWidth, std::to_string(Config::NUMBER_OF_CENTROIDS)));
     Logger::log(alignLeft("\tINSIGNIFICANT_OD_PAIRS_THRESHOLD:", columnWidth, std::to_string(Config::INSIGNIFICANT_OD_PAIRS_THRESHOLD)));
+    Logger::log(alignLeft("\tSIGNIFICANT_SOURCE_PRODUCTION:", columnWidth, std::to_string(Config::SIGNIFICANT_SOURCE_PRODUCTION)));
     Logger::log(alignLeft("\tVALUE_OF_TIME:", columnWidth, std::to_string(Config::VALUE_OF_TIME)));
 
     Logger::log("\n\t// Assignment settings");

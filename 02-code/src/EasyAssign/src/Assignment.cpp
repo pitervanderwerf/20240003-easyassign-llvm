@@ -36,210 +36,6 @@ Assignment::Assignment(const Dimensions& dimensions)
 
 
 // Graph operations
-
-//void Assignment::buildGraphFromLinksMapWithTurnsFull() {
-//    std::vector<int> skip_link_list;  // To store link IDs that have been processed
-//
-//    for (auto& pair : network.links_map) {
-//        Link& link = pair.second;
-//
-//        // Check if the link has already been processed
-//        if (std::find(skip_link_list.begin(), skip_link_list.end(), link.id) == skip_link_list.end()) {
-//
-//            bool from_node_is_junction = nodes_map->find(link.from_node) != nodes_map->end();
-//            bool to_node_is_junction = nodes_map->find(link.to_node) != nodes_map->end();
-//
-//            if ((from_node_is_junction && nodes_map->find(link.from_node)->second.junction_type > 1) || (to_node_is_junction && nodes_map->find(link.to_node)->second.junction_type > 1)) {
-//                // It's a junction that's not an undefined or equal junction and thus needs expansion
-//                // Map to store turn vertices for each connected link
-//                std::unordered_map<int, Vertex> turn_vertices_map;
-//
-//                if (from_node_is_junction) {
-//                    if (nodes_map->find(link.from_node)->second.junction_type) {
-//                        // doe iets
-//                    }
-//                    // Code for when link.from_node exists in nodes_map
-//                    Logger::log("Junction found; link_id: " + std::to_string(link.id) + ", from_node_id: " + std::to_string(link.from_node) + ", to_node_id: " + std::to_string(link.to_node));
-//                    // Add link.id to the skip_link_list
-//                    skip_link_list.push_back(link.id);
-//                    // Iterate over all links connected to the junction
-//                    for (const auto& connected_pair : network.links_map) {
-//                        const Link& connected_link = connected_pair.second;
-//                        // Check if the connected link involves the junction
-//                        if (connected_link.from_node == link.from_node || connected_link.to_node == link.from_node) {
-//                            Logger::log("link_id: " + std::to_string(connected_link.id));
-//                            // Add link.id to the skip_link_list
-//                            skip_link_list.push_back(connected_link.id);
-//                            // Add vertices that are not the junction node
-//                            int other_node_id = (connected_link.from_node == link.from_node) ? connected_link.to_node : connected_link.from_node;
-//
-//                            if (node_to_vertex.find(other_node_id) == node_to_vertex.end()) {
-//                                Vertex v = add_vertex(G);
-//                                node_to_vertex[other_node_id] = v;
-//                                vertex_to_node[v] = other_node_id;
-//                            }
-//
-//                            // Add turnvertices that replace the junction node per arm (node.id could be other_node.id * -1)
-//                            int turn_vertex_node = other_node_id * -1;  // Assuming the turn vertices are represented by negating the other node's ID
-//
-//                            if (node_to_vertex.find(turn_vertex_node) == node_to_vertex.end()) {
-//                                Vertex turn_vertex = add_vertex(G);
-//                                node_to_vertex[turn_vertex_node] = turn_vertex;
-//                                vertex_to_node[turn_vertex] = turn_vertex_node;
-//
-//                                // Store the turn vertex for the connected link
-//                                turn_vertices_map[connected_link.id] = turn_vertex;
-//                            }
-//
-//                            // Add edges between the original vertices of the links that are not the junction node and the added turnvertices
-//                            Edge original_to_turn_edge, turn_to_original_edge;
-//                            bool original_to_turn_inserted, turn_to_original_inserted;
-//
-//                            //tie(original_to_turn_edge, original_to_turn_inserted) = add_edge(node_to_vertex[other_node_id], node_to_vertex[turn_vertex_node], { link.cost_forward, link.dist_forward, link.time_forward, link.id, 0, 1 }, G);
-//                            tie(original_to_turn_edge, original_to_turn_inserted) = add_edge(node_to_vertex[other_node_id], node_to_vertex[turn_vertex_node], { link.cost_forward, link.id, 0, 1 }, G);
-//                            //tie(turn_to_original_edge, turn_to_original_inserted) = add_edge(node_to_vertex[turn_vertex_node], node_to_vertex[other_node_id], { link.cost_forward, link.dist_forward, link.time_forward, link.id, 1, 1 }, G);
-//                            tie(turn_to_original_edge, turn_to_original_inserted) = add_edge(node_to_vertex[turn_vertex_node], node_to_vertex[other_node_id], { link.cost_forward, link.id, 1, 1 }, G);
-//                        }
-//                    }
-//
-//                    // Connect the turnvertices after processing all connected links for the current junction
-//                    for (const auto& turn_pair : turn_vertices_map) {
-//                        int connected_link_id = turn_pair.first;
-//                        Vertex turn_vertex = turn_pair.second;
-//
-//                        // Connect the turnvertices of different connected links
-//                        for (const auto& other_turn_pair : turn_vertices_map) {
-//                            int other_connected_link_id = other_turn_pair.first;
-//                            Vertex turn_vertex_other = other_turn_pair.second;
-//
-//                            // Skip connecting a turnvertex to itself
-//                            if (connected_link_id != other_connected_link_id) {
-//                                // Add edges between the added turnvertices to create the turnedge (set EdgeProperty: turn = true)
-//                                Edge turn_to_turn_edge;
-//                                bool turn_to_turn_inserted;
-//                                Logger::log("Turn edge inserted for vertex: " + std::to_string(vertex_to_node[turn_vertex]) + " and vertex: " + std::to_string(vertex_to_node[turn_vertex_other]));
-//
-//                                //tie(turn_to_turn_edge, turn_to_turn_inserted) = add_edge(turn_vertex, turn_vertex_other, { link.cost_forward, link.dist_forward, link.time_forward, link.id, 0, 1 }, G);
-//                                tie(turn_to_turn_edge, turn_to_turn_inserted) = add_edge(turn_vertex, turn_vertex_other, { link.cost_forward, link.id, 0, 1 }, G);
-//                            }
-//                        }
-//                    }
-//                }
-//
-//                if (to_node_is_junction) {
-//                    // Code for when link.to_node exists in nodes_map
-//                    Logger::log("Junction found; link_id: " + std::to_string(link.id) + ", from_node_id: " + std::to_string(link.from_node) + ", to_node_id: " + std::to_string(link.to_node));
-//                    // Add link.id to the skip_link_list
-//                    skip_link_list.push_back(link.id);
-//                    // Iterate over all links connected to the junction
-//                    for (const auto& connected_pair : network.links_map) {
-//                        const Link& connected_link = connected_pair.second;
-//                        // Check if the connected link involves the junction
-//                        if (connected_link.from_node == link.to_node || connected_link.to_node == link.to_node) {
-//                            Logger::log("link_id: " + std::to_string(connected_link.id));
-//                            // Add link.id to the skip_link_list
-//                            skip_link_list.push_back(connected_link.id);
-//                            // Add vertices that are not the junction node
-//                            int other_node_id = (connected_link.from_node == link.to_node) ? connected_link.to_node : connected_link.from_node;
-//
-//                            if (node_to_vertex.find(other_node_id) == node_to_vertex.end()) {
-//                                Vertex v = add_vertex(G);
-//                                node_to_vertex[other_node_id] = v;
-//                                vertex_to_node[v] = other_node_id;
-//                            }
-//
-//                            // Add edges between the original vertices of the links that are not the junction node
-//                            Edge original_to_other_edge, other_to_original_edge;
-//                            bool original_to_other_inserted, other_to_original_inserted;
-//
-//                            //tie(original_to_other_edge, original_to_other_inserted) = add_edge(node_to_vertex[link.from_node], node_to_vertex[other_node_id], { link.cost_forward, link.dist_forward, link.time_forward, link.id, 0, 1 }, G);
-//                            tie(original_to_other_edge, original_to_other_inserted) = add_edge(node_to_vertex[link.from_node], node_to_vertex[other_node_id], { link.cost_forward, link.id, 0, 1 }, G);
-//                            //tie(other_to_original_edge, other_to_original_inserted) = add_edge(node_to_vertex[other_node_id], node_to_vertex[link.from_node], { link.cost_forward, link.dist_forward, link.time_forward, link.id, 1, 1 }, G);
-//                            tie(other_to_original_edge, other_to_original_inserted) = add_edge(node_to_vertex[other_node_id], node_to_vertex[link.from_node], { link.cost_forward, link.id, 1, 1 }, G);
-//                        }
-//                    }
-//
-//                    // Connect the turnvertices after processing all connected links for the current junction
-//                    for (const auto& turn_pair : turn_vertices_map) {
-//                        int connected_link_id = turn_pair.first;
-//                        Vertex turn_vertex = turn_pair.second;
-//
-//                        // Connect the turnvertices of different connected links
-//                        for (const auto& other_turn_pair : turn_vertices_map) {
-//                            int other_connected_link_id = other_turn_pair.first;
-//                            Vertex turn_vertex_other = other_turn_pair.second;
-//
-//                            // Skip connecting a turnvertex to itself
-//                            if (connected_link_id != other_connected_link_id) {
-//                                // Add edges between the added turnvertices to create the turnedge (set EdgeProperty: turn = true)
-//                                Edge turn_to_turn_edge;
-//                                bool turn_to_turn_inserted;
-//                                Logger::log("Turn edge inserted for vertex: " + std::to_string(vertex_to_node[turn_vertex]) + " and vertex: " + std::to_string(vertex_to_node[turn_vertex_other]));
-//
-//                                //tie(turn_to_turn_edge, turn_to_turn_inserted) = add_edge(turn_vertex, turn_vertex_other, { link.cost_forward, link.dist_forward, link.time_forward, link.id, 0, 1 }, G);
-//                                tie(turn_to_turn_edge, turn_to_turn_inserted) = add_edge(turn_vertex, turn_vertex_other, { link.cost_forward, link.id, 0, 1 }, G);
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//            else // It's an undefined or equal junction
-//            {
-//                    if (node_to_vertex.find(link.from_node) == node_to_vertex.end()) {
-//                        Vertex v = add_vertex(G);
-//                        node_to_vertex[link.from_node] = v;
-//                        vertex_to_node[v] = link.from_node;
-//                    }
-//
-//                    if (node_to_vertex.find(link.to_node) == node_to_vertex.end()) {
-//                        Vertex v = add_vertex(G);
-//                        node_to_vertex[link.to_node] = v;
-//                        vertex_to_node[v] = link.to_node;
-//                    }
-//
-//                    if (link.direction_forward) {
-//                        Edge e;
-//                        bool inserted;
-//
-//                        // In case of junction_type of from_node == equal, add Config::EQ_JUNCTION_COST
-//                        auto it = nodes_map->find(link.from_node);
-//                        if (it != nodes_map->end() && it->second.junction_type == 1) {
-//                            link.cost_forward += Config::EQ_JUNCTION_COST;
-//                        }
-//
-//                        //tie(e, inserted) = add_edge(node_to_vertex[link.from_node], node_to_vertex[link.to_node], { link.cost_forward, link.dist_forward, link.time_forward, link.id, 0, 0 }, G);
-//                        tie(e, inserted) = add_edge(node_to_vertex[link.from_node], node_to_vertex[link.to_node], { link.cost_forward, link.id, 0, 0 }, G);
-//                        if (inserted) {
-//                            link_to_edge[link.id] = e;
-//                            edge_to_link[e] = link.id;
-//                        }
-//                    }
-//
-//                    if (link.direction_backward) {
-//                        Edge e;
-//                        bool inserted;
-//
-//                        // In case of junction_type of to_node == equal, add Config::EQ_JUNCTION_COST
-//                        auto it = nodes_map->find(link.to_node);
-//                        if (it != nodes_map->end() && it->second.junction_type == 1) {
-//                            link.cost_backward += Config::EQ_JUNCTION_COST;
-//                        }
-//
-//                        //tie(e, inserted) = add_edge(node_to_vertex[link.to_node], node_to_vertex[link.from_node], { link.cost_backward, link.dist_backward, link.time_backward, link.id, 1, 0 }, G);
-//                        tie(e, inserted) = add_edge(node_to_vertex[link.to_node], node_to_vertex[link.from_node], { link.cost_backward, link.id, 1, 0 }, G);
-//                        if (inserted) {
-//                            link_to_edge[link.id] = e;
-//                            edge_to_link[e] = link.id;
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//
-//    printNumberOfVertices();
-//    printNumberOfEdges();
-//}
-
 void Assignment::buildGraphFromLinksMapWithTurns() {
     std::vector<std::pair<Vertex, Vertex>> edge_pairs;
     std::vector<EdgeProperties> edge_properties;
@@ -263,11 +59,12 @@ void Assignment::buildGraphFromLinksMapWithTurns() {
         if (link.direction_forward) {
             double cost = link.cost_forward;
             auto it = nodes_map->find(link.from_node);
-            if (it != nodes_map->end() && it->second.junction_type == 1) { // It's an equal priority junction
-                cost += Config::EQ_JUNCTION_COST;
-            }
-            if (it != nodes_map->end() && it->second.junction_type == -2) { // It's a centroid
-                cost += 10.0;
+            if (it != nodes_map->end()) {
+                if (it->second.junction_type == 1) { // It's an equal priority junction
+                    cost += Config::EQ_JUNCTION_COST;
+                } else if (it->second.junction_type == -2) { // It's a centroid
+                    cost += 10.0;
+                }
             }
 
             edge_pairs.emplace_back(from_vertex, to_vertex);
@@ -279,11 +76,12 @@ void Assignment::buildGraphFromLinksMapWithTurns() {
         if (link.direction_backward) {
             double cost = link.cost_backward;
             auto it = nodes_map->find(link.to_node);
-            if (it != nodes_map->end() && it->second.junction_type == 1) { // It's an equal priority junction
-                cost += Config::EQ_JUNCTION_COST;
-            }
-            if (it != nodes_map->end() && it->second.junction_type == -2) { // It's a centroid
-                cost += 10.0;
+            if (it != nodes_map->end()) {
+                if (it->second.junction_type == 1) { // It's an equal priority junction
+                    cost += Config::EQ_JUNCTION_COST;
+                } else if (it->second.junction_type == -2) { // It's a centroid
+                    cost += 10.0;
+                }
             }
 
             edge_pairs.emplace_back(to_vertex, from_vertex);
@@ -291,9 +89,6 @@ void Assignment::buildGraphFromLinksMapWithTurns() {
             link_to_edge_index[link.id] = edge_properties.size() - 1;
             edge_index_to_link[edge_properties.size() - 1] = link.id;
         }
-
-        // If the link is part of a junction, you may need additional logic to handle complex junctions.
-        // This could involve creating extra vertices and edges to represent turns at junctions.
     }
 
     // Create the Graph
@@ -310,6 +105,7 @@ void Assignment::buildGraphFromLinksMapWithTurns() {
     printNumberOfEdges();
     Logger::log("");
 }
+
 
 void Assignment::printNumberOfVertices() {
     Logger::log("\t" + std::to_string(num_vertices(G)) + " vertices added to graph");
@@ -492,67 +288,70 @@ void Assignment::assign(int start_source_vertex, int end_source_vertex) {
     std::map<std::pair<int, int>, double> local_skim_cost_list;
     std::string local_paths;
 
-
     for (int source_vertex_id = start_source_vertex; source_vertex_id <= end_source_vertex; ++source_vertex_id) {
-        Vertex source_vertex = node_to_vertex[source_vertex_id];
+        if (odm.row_sum_map[source_vertex_id - 1] > Config::SIGNIFICANT_SOURCE_PRODUCTION) {
+            Vertex source_vertex = node_to_vertex[source_vertex_id];
 
-        dijkstra_shortest_paths_no_color_map(
-                G,
-                source_vertex,
-                predecessor_map(&predecessors[0])
-                        .distance_map(&distances[0])
-                        .weight_map(weight_map)
-        );
+            dijkstra_shortest_paths_no_color_map(
+                    G,
+                    source_vertex,
+                    predecessor_map(&predecessors[0])
+                            .distance_map(&distances[0])
+                            .weight_map(weight_map)
+            );
 
-        if (Config::ASSIGN_FLOWS || Config::CREATE_SKIMS || Config::PRINT_PATHS) {
-            for (int target_vertex_id = 1; target_vertex_id <= Config::NUMBER_OF_CENTROIDS; target_vertex_id++) {
-                if (source_vertex_id != target_vertex_id) {
-                    double total_od_flow = odm.at(source_vertex_id - 1, target_vertex_id - 1);
-                    double od_flow = odm.at(source_vertex_id - 1, target_vertex_id - 1) * va_factor;
+            if (Config::ASSIGN_FLOWS || Config::CREATE_SKIMS || Config::PRINT_PATHS) {
+                for (int target_vertex_id = 1; target_vertex_id <= Config::NUMBER_OF_CENTROIDS; target_vertex_id++) {
+                    if (source_vertex_id != target_vertex_id) {
+//                    if (false) {
+                        double total_od_flow = odm.at(source_vertex_id - 1, target_vertex_id - 1);
+                        double od_flow = total_od_flow * va_factor;
 
-                    if (total_od_flow >= Config::INSIGNIFICANT_OD_PAIRS_THRESHOLD) {
-                        Vertex v = node_to_vertex[target_vertex_id];
-                        double path_cost = 0;
+                        if (total_od_flow >= Config::INSIGNIFICANT_OD_PAIRS_THRESHOLD) {
+                            Vertex v = node_to_vertex[target_vertex_id];
+                            double path_cost = 0;
 
-                        while (v != source_vertex) {
-                            Vertex prev = predecessors[v];
-                            auto edge_pair = edge(prev, v, G);
+                            while (v != source_vertex) {
+                                Vertex prev = predecessors[v];
+                                auto edge_pair = edge(prev, v, G);
 
-                            auto& edge_props = G[edge_pair.first];
+                                if (edge_pair.second) {  // Check if the edge exists
+                                    auto e = edge_pair.first;
+                                    auto &edge_props = G[e];
 
-                            if (Config::ASSIGN_FLOWS) {
-                                auto& link_flow = local_link_flows[edge_props.link_id];
-                                auto& link_flow_optimal = local_link_flows_optimal[edge_props.link_id];
+                                    if (Config::ASSIGN_FLOWS) {
+                                        auto &link_flow = local_link_flows[edge_props.link_id];
+                                        auto &link_flow_optimal = local_link_flows_optimal[edge_props.link_id];
 
-                                if (edge_props.direction == 0) {
-                                    link_flow.flow_forward += od_flow;
-                                    link_flow_optimal.flow_forward += total_od_flow;
+                                        if (edge_props.direction == 0) {
+                                            link_flow.flow_forward += od_flow;
+                                            link_flow_optimal.flow_forward += total_od_flow;
+                                        } else if (edge_props.direction == 1) {
+                                            link_flow.flow_backward += od_flow;
+                                            link_flow_optimal.flow_backward += total_od_flow;
+                                        }
+                                    }
+
+                                    if (Config::CREATE_SKIMS) {
+                                        double cost = edge_props.weight;
+                                        path_cost += cost;
+                                    }
                                 }
-                                else if (edge_props.direction == 1) {
-                                    link_flow.flow_backward += od_flow;
-                                    link_flow_optimal.flow_backward += total_od_flow;
+
+                                if (v == prev) {
+                                    break;
                                 }
+                                v = prev;
                             }
 
                             if (Config::CREATE_SKIMS) {
-                                double cost = edge_props.weight;
-                                path_cost += cost;
+                                local_skim_cost_list[std::make_pair(source_vertex_id, target_vertex_id)] = path_cost;
                             }
-
-                            if (v == prev) {
-                                break;
-                            }
-                            v = prev;
-                        }
-
-                        if (Config::CREATE_SKIMS) {
-                            local_skim_cost_list[std::make_pair(source_vertex_id, target_vertex_id)] = path_cost;
                         }
                     }
                 }
             }
         }
-
         counter++;
         if (counter % 1000 == 0) {
             std::lock_guard<std::mutex> lock(counter_mutex);
@@ -589,12 +388,9 @@ void Assignment::assign(int start_source_vertex, int end_source_vertex) {
                 skim_matrix.incrementMatrixSum(value);
             }
         };
-
         updateSkimValues(local_skim_cost_list, skm_cost);
     }
 }
-
-
 
 // Execute
 void Assignment::execute()
@@ -614,6 +410,7 @@ void Assignment::execute()
 
         if (iteration == 1) {
             odm.setOdMatrixFromBinary();
+            odm.createSumRowMap();
         }
 
         std::vector<std::thread> threads;

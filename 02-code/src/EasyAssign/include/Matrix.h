@@ -29,6 +29,7 @@ public:
     void resetMatrix();
 
     double sumRow(int row) const;
+    void createSumRowMap();
     void printAllRowSums() const;
 
     // Write to file
@@ -48,11 +49,13 @@ public:
     void exampleUsage();
 
     void printMatrixSum() const;
+    std::map<int, double> row_sum_map;
 
 private:
     int rows;
     int cols;
     long double matrix_sum;
+
     std::vector<double> data;
     std::vector<int> pmturi;
     std::string matrix_type;

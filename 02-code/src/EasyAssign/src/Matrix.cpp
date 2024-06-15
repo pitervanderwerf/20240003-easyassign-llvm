@@ -97,6 +97,12 @@ double Matrix::sumRow(int row) const {
     return sum;
 }
 
+void Matrix::createSumRowMap() {
+    for (int row = 0; row < rows; ++row) {
+        row_sum_map[row] = sumRow(row);
+    }
+}
+
 void Matrix::printAllRowSums() const {
     for (int row = 0; row < rows; ++row) {
         Logger::log(std::to_string(row) + ": " + std::to_string(sumRow(row)));

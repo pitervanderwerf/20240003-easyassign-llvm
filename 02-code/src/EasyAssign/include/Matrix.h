@@ -32,7 +32,7 @@ public:
     void printAllRowSums() const;
 
     // Write to file
-    std::string generateMatrixFileName(std::string ext) const;
+    [[nodiscard]] std::string generateMatrixFileName(std::string ext) const;
     int writeToBinaryFile() const;
     void writeMatrixToTextFile(const char* filename) const;
 

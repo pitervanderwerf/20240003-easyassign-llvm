@@ -37,33 +37,28 @@ struct Dimensions {
 };
 
 struct FoundAllTargets : public std::exception {
-    const char* what() const noexcept override {
+    [[nodiscard]] const char* what() const noexcept override {
         return "All target vertices found";
     }
 };
 
 class Assignment {
 public:
-    Assignment(const Dimensions& dimensions);
+    explicit Assignment(const Dimensions& dimensions);
 
     void buildGraphFromLinksMapWithTurns();
-    void buildGraphFromLinksMapWithTurnsFull();
+//    void buildGraphFromLinksMapWithTurnsFull();
     void printNumberOfVertices();
     void printNumberOfEdges();
     void printEdgeById(int target_link_id);
 
     void execute();
-    void executePc5(int number_of_pc5_nodes);
-    void executePc6(int number_of_pc6_nodes);
     void assign(int start_source_vertex, int end_source_vertex);
-    void assignPc5(int start_source_vertex, int end_source_vertex, int number_of_pc5_nodes);
-    void assignPc6(int start_source_vertex, int end_source_vertex,int number_of_pc6_nodes);
 
     void printFlows();
     void printFlowsLinksMap();
     void flowsToLinks();
     void calculateTotalTraveltimeSpent();
-    void flowsToLinksVector();
     void resetLinkFlows();
     void streamToDatabaseLinksMap();
     void printPaths();
@@ -113,72 +108,25 @@ private:
 
     std::string paths;
 
-//// Custom visitor for early termination
-//    class EarlyStopVisitor : public boost::default_dijkstra_visitor {
-//    public:
-//        explicit EarlyStopVisitor(const std::unordered_set<Vertex>& targets)
-//                : targets(targets), target_size(targets.size()) {}
-//
-//        template <typename Vertex, typename Graph>
-//        void examine_vertex(Vertex u, const Graph& g) {
-//            if (targets.find(u) != targets.end()) {
-//                found_targets.insert(u);
-//                if (found_targets.size() == target_size) {
-//                    throw FoundAllTargets();
-//                }
-//            }
-//        }
-//
-//    private:
-//        const std::unordered_set<Vertex>& targets;
-//        const size_t target_size;
-//        std::unordered_set<Vertex> found_targets;
-//    };
 // Custom visitor for early termination
-//    class EarlyStopVisitor : public boost::default_dijkstra_visitor {
-//    public:
-//        EarlyStopVisitor(const std::vector<bool>& target_flags, size_t target_count)
-//                : target_flags(target_flags), target_count(target_count), found_count(0) {}
-//
-//        template <typename Vertex, typename Graph>
-//        void examine_vertex(Vertex u, const Graph& g) {
-//            if (target_flags[u]) {
-//                found_count++;
-//                if (found_count == target_count) {
-//                    throw FoundAllTargets();
-//                }
-//            }
-//        }
-//
-//    private:
-//        const std::vector<bool>& target_flags;
-//        size_t target_count;
-//        size_t found_count;
-//    };
-// Custom visitor for early termination with batch checking
     class EarlyStopVisitor : public boost::default_dijkstra_visitor {
     public:
-        EarlyStopVisitor(const std::vector<bool>& target_flags, size_t target_count, size_t check_interval)
-                : target_flags(target_flags), target_count(target_count), found_count(0), check_interval(check_interval), processed_count(0) {}
+        explicit EarlyStopVisitor(const std::unordered_set<Vertex>& targets)
+                : targets(targets), target_size(targets.size()) {}
 
         template <typename Vertex, typename Graph>
         void examine_vertex(Vertex u, const Graph& g) {
-            processed_count++;
-            if (processed_count % check_interval == 0 || target_flags[u]) {
-                if (target_flags[u]) {
-                    found_count++;
-                }
-                if (found_count == target_count) {
+            if (targets.find(u) != targets.end()) {
+                found_targets.insert(u);
+                if (found_targets.size() == target_size) {
                     throw FoundAllTargets();
                 }
             }
         }
 
     private:
-        const std::vector<bool>& target_flags;
-        size_t target_count;
-        size_t found_count;
-        size_t check_interval;
-        size_t processed_count;
+        const std::unordered_set<Vertex>& targets;
+        const size_t target_size;
+        std::unordered_set<Vertex> found_targets;
     };
 };

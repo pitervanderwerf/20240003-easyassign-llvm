@@ -34,6 +34,7 @@ target_link_libraries(EasyAssign PRIVATE zlib)
 
 # Define the build output directory based on the build type
 set(BIN_OUTPUT_DIR ${CMAKE_BINARY_DIR}/../../bin/${CMAKE_BUILD_TYPE})
+set(TEST_OUTPUT_DIR ${CMAKE_BINARY_DIR}/../../../04-test/bbma_mib)
 
 # Ensure the output directory exists
 file(MAKE_DIRECTORY ${BIN_OUTPUT_DIR})
@@ -65,3 +66,13 @@ add_custom_command(TARGET EasyAssign POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy
         $<TARGET_FILE:EasyAssign>
         ${BIN_OUTPUT_DIR})
+
+if(CMAKE_BUILD_TYPE STREQUAL "Release")
+    # Custom command to copy binaries after build
+    add_custom_command(TARGET EasyAssign POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_directory
+            "${BIN_OUTPUT_DIR}"
+            "${CMAKE_SOURCE_DIR}/../04-test/mobspec"
+            COMMENT "Copying binaries to ${CMAKE_SOURCE_DIR}/../04-test/bbma_mib"
+    )
+endif()

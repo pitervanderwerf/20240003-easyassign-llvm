@@ -3,6 +3,7 @@ project(EasyAssign VERSION 0.0.1)
 
 set(CMAKE_CXX_STANDARD 20)
 set(LLVM_MINGW_PATH "C:/Program Files/llvm-mingw")
+set(BIN_OUTPUT_DIR "${CMAKE_SOURCE_DIR}/../04-test/bbma_mib")
 
 message(STATUS "Building ${PROJECT_NAME} version ${PROJECT_VERSION} ${CMAKE_BUILD_TYPE}")
 

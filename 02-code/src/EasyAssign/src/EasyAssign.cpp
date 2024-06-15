@@ -18,12 +18,12 @@ int main()
     if (Config::LEVEL_OF_DETAIL == "C2C") {
         my_assignment.execute();
     }
-    else if (Config::LEVEL_OF_DETAIL == "PC5") {
-        my_assignment.executePc5(35357);
-    }
-    else if (Config::LEVEL_OF_DETAIL == "PC6") {
-        my_assignment.executePc6(462369);
-    }
+//    else if (Config::LEVEL_OF_DETAIL == "PC5") {
+//        my_assignment.executePc5(35357);
+//    }
+//    else if (Config::LEVEL_OF_DETAIL == "PC6") {
+//        my_assignment.executePc6(462369);
+//    }
 
 
     //// Test Network

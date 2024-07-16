@@ -10,7 +10,16 @@ message(STATUS "Building ${PROJECT_NAME} version ${PROJECT_VERSION} ${CMAKE_BUIL
 # Set optimization flags for release builds
 if(CMAKE_BUILD_TYPE STREQUAL "Release")
     if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-        add_compile_options(-O3 -march=native -flto) #--ffast-math
+        add_compile_options(
+                -O3
+                -march=native
+                -flto
+                #                -ffast-math
+                -funroll-loops
+                -fvectorize
+                -finline-functions
+                #                -mno-speculative-load-hardening
+        )
         add_link_options(-flto)
     endif()
 endif()

@@ -15,6 +15,16 @@
 #include "Network.h"
 #include "boost/graph/dijkstra_shortest_paths.hpp"
 
+//#ifdef _WIN32
+//#ifdef BUILDING_DLL
+//#define DLL_EXPORT __declspec(dllexport)
+//#else
+//#define DLL_EXPORT __declspec(dllimport)
+//#endif
+//#else
+//#define DLL_EXPORT __attribute__((visibility("default")))
+//#endif
+
 struct EdgeProperties {
     double weight;
     int link_id;
@@ -47,7 +57,6 @@ public:
     explicit Assignment(const Dimensions& dimensions);
 
     void buildGraphFromLinksMapWithTurns();
-//    void buildGraphFromLinksMapWithTurnsFull();
     void printNumberOfVertices();
     void printNumberOfEdges();
     void printEdgeById(int target_link_id);
@@ -69,10 +78,9 @@ public:
     int counter = 0;
     int iteration = 0;
 
+    Dimensions dimensions;
 private:
     double va_factor = 1.0;
-
-    Dimensions dimensions;
 
     Matrix odm;
     Matrix skm_cost;
